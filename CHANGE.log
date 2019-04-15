@@ -1,0 +1,17 @@
+2019年04月15日
+
+* 修复无法正常使用`module.exports`的问题，错误提示如下：
+
+```javascript
+Cannot assign to read only property 'exports' of object '#<Object>'
+```
+
+需要安装依赖：`npm i -S @babel/plugin-transform-modules-commonjs`，并调整babel配置，插件处。
+
+```javascript
+  // ...
+  plugins: ['@babel/plugin-transform-runtime', '@babel/plugin-transform-modules-commonjs']
+  // ...
+```
+
+参考：<https://github.com/webpack/webpack/issues/4039#issuecomment-458041424>

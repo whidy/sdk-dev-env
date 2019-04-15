@@ -44,6 +44,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@babel/runtime": "^7.4.3",
     "core-js": "^3.0.1"
   }
