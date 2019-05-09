@@ -1,5 +1,7 @@
 # javascript sdk develop enviroment（JS-SDK开发环境）
 
+**该项目环境目前尚不稳定，仅用于测试，请勿使用在生产环境**
+
 该仓库用作开发JavaScript SDK用的一个基础骨架。
 
 ## 特性
@@ -20,3 +22,41 @@
 * [core-js](https://github.com/zloirock/core-js)
 * [webpack/babel-loader](https://webpack.docschina.org/loaders/babel-loader/)
 * [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
+
+## 分支说明
+
+针对不同的ES版本进行了分支维护，关于不同版本的ECMAScript的特性，我这里找了几篇文章，你可以仔细阅读下：
+
+* [JavaScript brief history and ECMAScript(ES6,ES7,ES8,ES9) features](https://medium.com/@madasamy/javascript-brief-history-and-ecmascript-es6-es7-es8-features-673973394df4)
+* [细解JavaScript ES7 ES8 ES9 新特性](https://segmentfault.com/a/1190000017174508)
+
+### master
+
+该分支仅支持es6以下的语法进行SDK开发。你可以阅读Babel官方的[Learn ES2015](https://babeljs.io/docs/en/learn.html)
+
+这里对常用的ES6特性进行测试：
+
+1. Default Parameters in ES6
+1. Template Literals in ES6
+1. Multi-line Strings in ES6
+1. Destructuring Assignment in ES6
+1. Enhanced Object Literals in ES6
+1. Arrow Functions in ES6
+1. Promises in ES6
+1. Block-Scoped Constructs Let and Const
+1. Classes in ES6
+1. Modules in ES6
+
+参考：[Top 10 ES6 Features Every Busy JavaScript Developer Must Know](https://webapplog.com/es6/)
+
+### for-es7
+
+配置中。。。
+
+### for-es8
+
+配置中。。。
+
+### for-es9
+
+配置中。。。
