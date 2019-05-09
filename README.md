@@ -6,10 +6,10 @@
 
 ## 特性
 
-* 采用`Webpack 4.29.6`进行构建
+* 采用`Webpack 4.30.0`进行构建
 * 使用`eslint`+`prettier`进行代码格式化
 * 建议`vscode`开发，已配置好保存自动格式化代码
-* 结合`babel`+`core-js`编译，兼容性IE9及以上
+* ~~结合`babel`+`core-js`编译，兼容性IE9及以上~~
 * 采用`Hapi`作为node服务器，实现简单的SSR及相关功能
 * 采用`nodemon`对服务端文件变更及时更新，同时也支持Webpack监听
 
@@ -22,6 +22,33 @@
 * [core-js](https://github.com/zloirock/core-js)
 * [webpack/babel-loader](https://webpack.docschina.org/loaders/babel-loader/)
 * [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
+
+## 项目依赖说明
+
+对于不同的分支依赖安装可能有些不同，我这里尽可能描述清楚每一个依赖的用途，强烈反对胡乱装依赖，不用的又不清理的坏习惯。
+
+### Webpack相关：
+
+最基本的Webpack安装（[安装Webpack](https://webpack.docschina.org/guides/installation/)）
+
+```
+npm install --save-dev webpack
+npm install --save-dev webpack-cli
+```
+
+结合Babel需要的部分，babel-loader使用需要（[安装babel-loader](https://webpack.docschina.org/loaders/babel-loader/)）
+
+```
+npm install -D babel-loader @babel/core @babel/preset-env webpack
+```
+
+### Hapi
+
+用于本地测试启用的Nodejs服务器，特别注意，**该项目使用`@hapi/hapi`版本号18.x，依赖跟`hapi`的17.x不同！**
+
+```
+npm install -D @hapi/hapi @hapi/inert @hapi/vision handlebars
+```
 
 ## 分支说明
 

@@ -26,7 +26,9 @@
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
-    "babel-eslint": "^10.0.1",
+    "@hapi/hapi": "^18.3.1",
+    "@hapi/inert": "^5.2.0",
+    "@hapi/vision": "^5.5.2",
     "babel-loader": "^8.0.5",
     "babel-minify-webpack-plugin": "^0.3.1",
     "clean-webpack-plugin": "^2.0.2",
@@ -34,17 +36,12 @@
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.0.1",
     "handlebars": "^4.1.2",
-    "hapi": "^18.1.0",
-    "inert": "^5.1.3",
     "prettier": "^1.17.0",
-    "vision": "^5.4.4",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
-    "@babel/runtime": "^7.4.3",
-    "core-js": "^3.0.1"
+    "@babel/polyfill": "^7.4.4"
   }
 }
