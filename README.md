@@ -92,6 +92,8 @@ You should also be sure that the version you pass to the `corejs` option matches
 
 当然关于core-js官方也有推荐不用polyfill，详细请见[core-js babel](https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md#babel)
 
+**注意：**关于`@babel/preset-env`的补充，本例中的使用的**presets**为`@babel/env`（https://babeljs.io/docs/en/usage#configuration），应该等同于`@babel/preset-env`，但是我并没有找到相关说明。
+
 其他的插件
 
 ```
