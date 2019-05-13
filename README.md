@@ -1,15 +1,40 @@
 # javascript sdk develop enviroment（JS-SDK开发环境）
 
-**该项目环境目前尚不稳定，仅用于测试，请勿使用在生产环境**
+**该项目环境目前尚不稳定，建议仅用于测试，不建议使用在生产环境**
 
 该仓库用作开发JavaScript SDK用的一个基础骨架。
 
+## 运行
+
+```
+npm i
+```
+
+开发状态下直接预览效果
+
+```
+npm run dev
+```
+
+访问<http://localhost:8080>，在控制台查看结果，兼容ie9+。
+
+如需用于生产环境
+
+```
+npm run build
+npm run start
+```
+
+访问<http://localhost:8080>，在控制台查看结果，兼容ie9+。
+
+如有其他问题请提Issue。
+
 ## 特性
 
+* 结合`babel 7.4`+`core-js 3`编译，兼容**IE9及以上**
 * 采用`Webpack 4.30.0`进行构建
 * 使用`eslint`+`prettier`进行代码格式化
 * 建议`vscode`开发，已配置好保存自动格式化代码
-* ~~结合`babel`+`core-js`编译，兼容性IE9及以上~~
 * 采用`Hapi`作为node服务器，实现简单的SSR及相关功能
 * 采用`nodemon`对服务端文件变更及时更新，同时也支持Webpack监听
 
@@ -32,15 +57,49 @@
 最基本的Webpack安装（[安装Webpack](https://webpack.docschina.org/guides/installation/)）
 
 ```
-npm install --save-dev webpack
-npm install --save-dev webpack-cli
+npm i -D webpack
+npm i -D webpack-cli
 ```
 
 结合Babel需要的部分，babel-loader使用需要（[安装babel-loader](https://webpack.docschina.org/loaders/babel-loader/)）
 
 ```
-npm install -D babel-loader @babel/core @babel/preset-env webpack
+npm i -D babel-loader @babel/core @babel/preset-env
+npm i @babel/polyfill core-js
 ```
+
+* `babel-loader`和Webpack一起使用的loader
+* `@babel/core`不知道如何解释反正很重要，详细请见[@babel/core](https://babeljs.io/docs/en/next/babel-core.html)
+* `@babel/preset-env`一个智能的预设编译打包环境，在babel配置中设定，它会结合你配置的兼容环境来自动处理。详细请见[@babel/preset-env](https://www.babeljs.cn/docs/babel-preset-env)
+* `@babel/polyfill`和`core-js`支持es2015+的所有转换。
+
+> **注意：**后来官方建议使用`npm i --save core-js regenerator-runtime`。因此我这里会有两种写法。详细请见[@babel/polyfill](https://www.babeljs.cn/docs/babel-polyfill)。
+
+如果你仅用`@babel/polyfill`可能会在构建过程中出现如下提示：
+
+```
+WARNING: We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
+
+You should also be sure that the version you pass to the `corejs` option matches the version specified in your `package.json`'s `dependencies` section. If it doesn't, you need to run one of the following commands:
+
+  npm install --save core-js@2    npm install --save core-js@3
+  yarn add core-js@2              yarn add core-js@3
+
+  ...
+```
+
+未在babel配置文件内配置core-js版本，默认读取2.x版，如果装的3.x，则报错。所以需要将配置设置一个正确的core-js版本。
+
+当然关于core-js官方也有推荐不用polyfill，详细请见[core-js babel](https://github.com/zloirock/core-js/blob/master/docs/2019-03-19-core-js-3-babel-and-a-look-into-the-future.md#babel)
+
+其他的插件
+
+```
+npm i -D babel-minify-webpack-plugin clean-webpack-plugin
+```
+
+* `babel-minify-webpack-plugin`用于生产环境压缩js
+* `clean-webpack-plugin`用于每次编译产出打包文件前清理旧文件
 
 ### Hapi
 
@@ -49,6 +108,11 @@ npm install -D babel-loader @babel/core @babel/preset-env webpack
 ```
 npm install -D @hapi/hapi @hapi/inert @hapi/vision handlebars
 ```
+
+* `@hapi/hapi`是nodejs服务器[hapijs](https://hapijs.com/)
+* `@hapi/inert`静态文件管理插件[inert](https://github.com/hapijs/inert)
+* `@hapi/vision`用于模板渲染的一个插件[vision](https://github.com/hapijs/vision)
+* `handlebars`大概是理解为模板引擎[Handlebars.js](http://handlebarsjs.com/)
 
 ## 分支说明
 

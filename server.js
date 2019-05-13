@@ -1,9 +1,9 @@
 'use strict'
-const Handlebars = require('handlebars');
-const Hapi = require('@hapi/hapi');
-const Vision = require('@hapi/vision');
-const Inert = require('@hapi/inert');
-const server = Hapi.server({ port: 8080 })
+const Handlebars = require('handlebars')
+const Hapi = require('@hapi/hapi')
+const Vision = require('@hapi/vision')
+const Inert = require('@hapi/inert')
+const server = Hapi.server({ host: '0.0.0.0', port: 8080 })
 
 const start = async () => {
   await server.register(Vision)

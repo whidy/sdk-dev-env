@@ -11,11 +11,7 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            // https://babeljs.io/docs/en/options#rootmode
-            rootMode: 'upward'
-          }
+          loader: 'babel-loader'
         }
       }
     ]
