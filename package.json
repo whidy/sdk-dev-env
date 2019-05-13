@@ -41,7 +41,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.4.4",
-    "core-js": "^3.0.1"
+    "core-js": "^3.0.1",
+    "regenerator-runtime": "^0.13.2"
   }
 }
